@@ -19,7 +19,9 @@ const firebaseConfig = {
 
 const port = 3000;
 const router = express();
-router.use(cors());
+router.use(cors({
+  origin: 'http://localhost:5173'
+}));
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app); // Get storage reference
 const db = getFirestore(app);
